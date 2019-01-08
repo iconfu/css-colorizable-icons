@@ -1,0 +1,20 @@
+{
+  "name": "examples",
+  "version": "1.0.0",
+  "description": "SVGInject Example",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iconfu/css-colorizable-icons/examples"
+  },
+  "keywords": [
+    "SVG",
+    "inject"
+  ],
+  "author": "Björn Bösenberg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iconfu/css-colorizable-icons/issues"
+  },
+  "homepage": "https://github.com/iconfu/css-colorizable-icons#readme"
+}
