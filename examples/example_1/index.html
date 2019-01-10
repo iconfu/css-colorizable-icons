@@ -4,46 +4,13 @@
     <title>Individual Icon Coloring Example</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width">
-    <script src="svg-inject.min.js"></script>
-    <script>
-      SVGInject.setOptions({
-        beforeInject: function (img, svg) {
-          if (/Trident|MSIE/.test(window.navigator.userAgent)) {
-            // responsive SVGs (width: 100%; height: auto;) are not correctly positioned in Internet Explorer.
-            // Solve this issue by wrapping the SVG in a div. The SVG is prepended by a canvas element to the SVG.
-            var viewBoxVals = (svg.getAttribute('viewBox') || '').split(/[\s,]+/);
-            var width = parseInt(viewBoxVals[2]);
-            var height = parseInt(viewBoxVals[3]);
-            if (width > 0 && height > 0) {
-              // Create canvas using aspect ratio from viewBox
-              var canvas = document.createElement('canvas');
-              // Use Euclidean algorithm to find the greatest common divisor of width and height in
-              // order to create the smallest canvas possible with the SVG's width/height ratio.
-              var whGcd = function gcd(a, b) { return b ? gcd(b, a % b) : a; }(width, height);
-              canvas.height = height / whGcd;
-              canvas.width = width / whGcd;
-              canvas.setAttribute('style', 'display:block; width:100%; height:auto; visibility:hidden;');
-              // Adjust style of SVG and its parent to make SVG fill the space reserved by canvas
-              // Also set overflow: hidden to work around another layout bug in IE 11.
-              var svgStyle = svg.style;
-              svgStyle.position = 'absolute';
-              svgStyle.top = 0;
-              svgStyle.overflow = 'hidden';
-              var parentNode = img.parentNode;
-              parentNode.style.position = 'relative';
-              // Add canvas before img element
-              parentNode.insertBefore(canvas, img);
-            }
-          }
-        }
-      });
-    </script>
+    <script src="js/svg-inject.min.js"></script>
+    <script src="js/svg-inject-ie-responsive.js"></script>
   </head>
   <body>
     <div style="width: 100vw; height: 30vw; max-width: 1000px; max-height: 300px; margin: 0 auto; overflow: auto;">
       <div class="ifu-example-view">
         <style>
-
           body {
             margin: 0;
             background: #fff;
