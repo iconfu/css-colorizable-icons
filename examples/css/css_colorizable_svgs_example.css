@@ -1,4 +1,4 @@
-  .ifu--svg-inject-example {
+  .ifu--css-colorizable-svgs-example {
     max-width: 1000px;
     margin: 0 auto;
     font-family: Roboto, Helvetica Neue, sans-serif;
@@ -140,7 +140,7 @@
     font-family: Roboto Mono, Helvetica Monospaced, monospace;
     color: #eee;
     font-size: 14px;
-    white-space: pre;
+    white-space: pre-wrap;
   }
 
   @media (max-width: 420px) {
@@ -158,7 +158,6 @@
   .ifu-iframe-container {
     position: relative;
     padding-bottom: 56.25%;
-    height: 0;
     overflow: hidden;
     width: 100%;
     height: auto;

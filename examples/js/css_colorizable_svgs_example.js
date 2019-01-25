@@ -1,4 +1,4 @@
-var IfuSvgInjectExample = (function() {
+var IfuCssColorizableSvgsExample = (function() {
   var regexs = {
     js: /\/\*\s*ifu-code-source-js\s*\*\/([\s\S]*)\/\*\s*ifu-code-source-js\s*\*\//m,
     css: /\/\*\s*ifu-code-source-css\s*\*\/([\s\S]*)\/\*\s*ifu-code-source-css\s*\*\//m,
@@ -22,13 +22,13 @@ var IfuSvgInjectExample = (function() {
 
   function toggleCode(element) {
     // find ancestor example element
-    var $code = $(element).closest('.ifu--svg-inject-example').find('.ifu-example-code');
+    var $code = $(element).closest('.ifu--css-colorizable-svgs-example').find('.ifu-example-code');
     // toggle class to show/hide code
     $code.toggleClass('ifu-code-expanded');
   }
 
   function showCodeType(button, type) {
-    var $code = $(button).closest('.ifu--svg-inject-example').find('.ifu-example-main');
+    var $code = $(button).closest('.ifu--css-colorizable-svgs-example').find('.ifu-example-main');
     $code.removeClass('ifu-show-html ifu-show-css ifu-show-js');
     $code.addClass('ifu-show-' + type);
   }
